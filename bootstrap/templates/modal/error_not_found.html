@@ -1,0 +1,31 @@
+<!-- error not found modal -->
+<div class="modal fade" id="errorNotFound" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            {% with messages = get_flashed_messages(with_categories = true) %}
+            {% if messages %}
+            
+            {% if messages[0][0] == 'error' %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            {% else %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            {% endif %}
+                <div class="modal-body">
+                    <p>{{messages[0][1]}}</p>
+                </div>
+        </div>
+        {% endif %}
+        {% endwith %}     
+    </div>
+</div>

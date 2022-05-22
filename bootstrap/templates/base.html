@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sistem Rekomendasi</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 " id="mainNav">
+            <div class="container px-10 px-lg-15 align-items-left justify-content-center text-left">
+                <img class="img-fluid" src="static/assets/img/portfolio/thumbnails/uii.png" alt="Image" height="50" width="150"></img>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" 
+                aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ 'index' }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ 'registrasi' }}">Registrasi</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+                
+		{% block content %}{% endblock %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var messages = "{{ get_flashed_messages() }}";
+
+                if (typeof messages != 'undefined' && messages != '[]') {
+                    $("#errorNotFound").modal();
+                };
+            });
+        </script>
+  
+        <!-- Footer-->
+        <!-- Bootstrap core JS-->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+        <script src="static/vendor/jquery/jquery.min.js"></script>
+        <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> -->
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+
+        <!-- data table -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"></script> -->
+
+        <footer class="bg-light py-3">
+            <div class="small text-center text-muted">Copyright &copy; 2022 - Dining Dwi Suci Riyani</div>
+        </footer>
+        {% include "modal/error_not_found.html"%}
+    </body>
+</html>

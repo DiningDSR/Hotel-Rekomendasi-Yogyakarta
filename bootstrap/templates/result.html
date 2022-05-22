@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="masthead" id="contact">
+    <div class="row result-row-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="text-white font-weight-bold">Hasil Rekomendasi</h1>
+            <a href="{{'index'}}" class="btn btn-primary btn-block">Back</a>
+        </div>
+    </div>
+    <div class="row result-row-body">
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Hotel yang pernah dinilai {{user}}</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped table-scroll">
+                        <thead>
+                            <tr>
+                                {% for x in cols_rated %}
+                                <th>{{x}}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for x in rated_hotel %}
+                            <tr>
+                                <td>{{x.itemName}}</td>
+                                <td>{{x.bintang}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Rekomendasi Hotel Untuk {{user}}</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                {% for x in cols %}
+                                <th>{{x}}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for y in data %}
+                            <tr>
+                                <td>{{y.itemName}}</td>
+                                <td>{{y.bintang}}</td>
+                                <td>{{y.rating}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
