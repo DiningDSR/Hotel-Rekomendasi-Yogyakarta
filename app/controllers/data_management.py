@@ -86,7 +86,7 @@ def recommendation():
         data = addBintangHotel(data, df_hotel)
         rated_hotel = addBintangHotel(rated_hotel, df_hotel)
 
-        return render_template('result.html', data=data, cols=["Nama Hotel", "Bintang","Similarity"], 
+        return render_template('result.html', data=data, cols=["Nama Hotel", "Bintang","Prediksi Rating"], 
             rated_hotel=rated_hotel, cols_rated=["Nama Hotel", "Bintang"],
                 user=user)
     except:
