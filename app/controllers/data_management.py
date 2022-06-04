@@ -81,7 +81,7 @@ def recommendation():
         df = preps.pivot_data()
         data = hotels_recommender(df, user)
         rated_hotel = {"itemName": get_user_rating(df, user),
-        "rating": get_user_rating(df, user)}
+        "rating": get_user_rating(df, rating)}
 
         df_hotel = preps.convert_hotel()
         data = addBintangHotel(data, df_hotel)
