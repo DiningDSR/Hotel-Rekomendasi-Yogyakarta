@@ -73,7 +73,6 @@ def dump():
 @dataManager.route("recommendation", methods=["GET"])
 def recommendation():
     user = request.args.get("user").lower()
-    rating = request.args.get("rating").lower()
     try:
         ratings = Rating.objects.all()
         hotels = Hotel.objects.all()
@@ -81,15 +80,14 @@ def recommendation():
         
         df = preps.pivot_data()
         data = hotels_recommender(df, user)
-        rated_hotel = {"itemName": get_user_rating(df, user),
-        "rating": get_user_rating(df, rating)}
+        rated_hotel = {"itemName": get_user_rating(df, user)}
 
         df_hotel = preps.convert_hotel()
         data = addBintangHotel(data, df_hotel)
         rated_hotel = addBintangHotel(rated_hotel, df_hotel)
 
         return render_template('result.html', data=data, cols=["Nama Hotel", "Bintang","Prediksi Rating"], 
-            rated_hotel=rated_hotel, cols_rated=["Nama Hotel", "Bintang", "Rating"],
+            rated_hotel=rated_hotel, cols_rated=["Nama Hotel", "Bintang"],
                 user=user)
     except:
         flash('User not found', 'error')
