@@ -73,6 +73,7 @@ def dump():
 @dataManager.route("recommendation", methods=["GET"])
 def recommendation():
     user = request.args.get("user").lower()
+    rating = request.args.get("rating").lower()
     try:
         ratings = Rating.objects.all()
         hotels = Hotel.objects.all()
