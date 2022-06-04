@@ -87,7 +87,7 @@ def recommendation():
         rated_hotel = addBintangHotel(rated_hotel, df_hotel)
 
         return render_template('result.html', data=data, cols=["Nama Hotel", "Bintang","Prediksi Rating"], 
-            rated_hotel=rated_hotel, cols_rated=["Nama Hotel", "Bintang"],
+            rated_hotel=rated_hotel, cols_rated=["Nama Hotel", "Bintang", "Rating"],
                 user=user)
     except:
         flash('User not found', 'error')
