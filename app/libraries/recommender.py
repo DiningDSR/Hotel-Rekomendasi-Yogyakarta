@@ -24,7 +24,7 @@ def recommend_hotels(df, df1, user, num_recommended_hotel):
 
   return sorted_rm
 
-def hotels_recommender(df, user, num_neighbors=10, num_recommendation=10):
+def hotels_recommender(df, user, num_neighbors=15, num_recommendation=15):
   """
   df: origin dataframe
   user: the name of user
