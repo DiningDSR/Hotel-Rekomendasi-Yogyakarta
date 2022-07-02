@@ -1,14 +1,5 @@
 # Hotel Recommendation
 
-## Install requirements
-
-Untuk menjalankan fungsionalitas dari script di sini, maka cukup jalanan perintah berikut
-
-```
-pip install -r requirements.txt
-```
-
-
 ## File structure
 
 Berikut ini merupakan struktur file yang ada pada proyek ini
